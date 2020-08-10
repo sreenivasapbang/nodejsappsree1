@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Report Title</title></head>
+  <!-- <link rel="stylesheet" type="text/css" href="mystyle.css"/> -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+  <link rel="shortcut icon" href="#">
+  <style>
+
+  body, html {
+    margin:0;
+    padding:0;
+    height:100%;
+	overflow: auto;
+	overflow-y: scroll;
+	border:1;
+}  
+  .ForTKheader {
+	  overflow: hidden;
+	  background-color: #367;
+	  position: fixed; /* Set the navbar to fixed position */
+	  top: 0; /* Position the navbar at the top of the page */
+	  width: 100%; /* Full width */
+		height: 60px;
+		border:1;
+	}
+  /* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 30; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  border:1;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.containers-box {
+	
+	height:120px;
+	overflow: auto;
+}
+.float-container {
+    <!-- border: 3px solid #fff; -->
+    padding: 2px; 
+	overflow: auto;
+}
+
+.float-child {
+    width: 33%;
+    float: left;
+    padding: 2px;
+    <!-- border: 2px solid red; -->
+}  
+
+.top-grid-container {
+    width:100%;
+    height:200px;
+    background:white;
+    margin:0;
+	top: 100px;
+	position:fixed;
+	overflow: auto;
+	<!-- font-family: cursive; -->
+	 <!-- animation: mymove 5s infinite; -->
+}
+<!-- @keyframes mymove { -->
+  <!-- 20% {font: 20px bold;} -->
+<!-- } -->
+.grid-container {
+    width:100%;
+    height:320px;
+    background:#80ced6;
+    margin:0;
+	top: 300px;
+	
+	overflow:auto;
+	border:1px solid #fff;
+	 position:fixed;
+	 overflow-y:scroll;
+}
+.grid-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    <!-- border: 2px solid red; -->
+}  
+
+#graph_div {
+    width:100%;
+    height:100%;
+    float:left;
+    background:blue;
+}
+#panel_div { 
+    width:100%;
+	background:darkgrey;
+    left:300px
+	height:100%;
+	overflow:auto;
+
+}
+#topbar {
+    width:100%;
+    height:320px;
+    background:white;
+    margin:0;
+	
+	<!-- position:fixed; -->
+}
+
+.card{
+  background-color:white;
+  height:200px;
+  width:300px;
+  margin-left:275px;
+  margin-bottom:100px;
+  box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  border-radius:2px;
+  transition:all 0.5s ease;
+  font-weight:100;
+  overflow:hidden;
+}
+.card:hover{
+  margin-top:-5px;
+  box-shadow:0 20px 30px 0 rgba(0, 0, 0, 0.2);
+}
+.card-header{
+  height:55px; 
+  background-color:yellow;
+  background-size:cover;
+  background-position:center center;
+}
+.card-body{
+  padding:15px 15px 5px 15px;
+  color:#555;
+}
+.card-title{
+  font-size:1.4em;
+  margin-bottom:5px;
+}
+.card-sub-title{
+  color:#b3b3b3;
+  font-size:1em;
+  margin-bottom:15px;
+}
+.card-desc{
+  font-size:0.85rem;
+  line-height:17px;
+}
+
+
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateX(180deg);
+}
+
+
+.footer{
+	width:100%;
+    height:120px;
+    background:#fefbd8;
+    margin:0;
+	top: 600px;	
+	overflow:auto;
+	border:1px solid #fff;
+	position:fixed;
+	overflow-y:scroll;
+	color:purple;
+}
+
+	</style>
+  <body bgcolor="white">
+	 
+	<div class="ForTKheader">
+	
+		<div class="float-container">
+
+		  <div class="float-child">
+			<div class="green" style="color:yellow;font-size:32">4Techknowledgist</div>
+		  </div>
+		  <div class="float-child">
+			<div class="green">&nbsp;</div>
+		  </div>
+		  
+		  <div class="float-child" >
+			<div id="time" class="blue" style='color:white;font-size:12'></div>
+			<div class="blue"><span style='color:white;font-size:12'>Today's Weather: Cloudy 42 degrees</span></div>
+		  </div>
+		  
+		</div>
+		
+		
+	<div>
+	<div class="navbar">
+	  <a href="#home">Home</a>
+	  <a href="/articles">Articles</a>
+	  <a href="#contact">Contact</a>
+	</div>
+	<div class="containers-box"> 
+
+	<div class="top-grid-container">
+		<div class="covdiv">This page is meant to provide general information on daily basis where we track the international COVID details and provides Stock information.
+		 <!-- <button id="submit" onclick="window.open('http://127.0.0.1:3000/video','_blank')">Submit</button> -->
+		</div>
+		<div>
+			<div id="barchart_material" style="width: 500px; height: 200px;float:left"></div>
+		<div id="topbar">
+       My dashboard
+    </div>
+<div>
+	</div>
+	
+    <div class="grid-container">
+		<div class="grid-child purple">
+		<!-- <video id="player" width="100%" height="auto" autoplay="autoplay" controls> -->
+		  <!-- <source src="http://127.0.0.1:8080/video_20180616_124045.mp4" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2"> -->
+	<!-- </video> -->
+	<!-- <video src="http://127.0.0.1:8080/video_20180616_124045.mp4" width="100%" height="100%" /> -->
+		<!-- <div id="ForTKVideo"></div> -->
+<div class="row">
+<div class="col-md-3 col-md-offset-3">
+
+<!-- <This video does not play in chrome as reported in stackoverflow article -->
+<!-- https://stackoverflow.com/questions/18107941/google-chrome-28-doesnt-play-mp4-videos -->
+<!-- we also had this problem... Both Webm and theora/ogg worked fine in chrome and the mp4 video worked fine on IE9 and in firefox. Just chrome fails. -->
+
+<!-- We also manage to fix this by updating the video drivers (intel HD on a DELL PC), so looks like a problem in the H.264 acceleration used in chrome and old intel drivers -->
+<!-- But works fine with IE11 -->
+
+
+<video style="height: 400px; width:600px;" id="videoPlayer" controls muted="muted" autoplay>
+<source src="http://localhost:3000/video" type='video/mp4;'>
+</video>
+</div>
+</div>
+
+		<div id="graph_div">
+		  The graph will be here
+			
+	<table><th>Amount</th><th>To</th><tr><td>12</td><td>Sundar</td></tr><tr><td>12</td><td>Sundar</td></tr><tr><td>24</td><td>Ram</td></tr><tr><td>97</td><td>Savi</td></tr><tr><td>2</td><td>rrr</td></tr></table>
+	  <table></table>
+	  <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <h2>4Techknowledgist.com</h2>
+    </div>
+    <div class="flip-box-back">
+      <h2>For Technology Lovers</h2>
+    </div>
+  </div>
+</div>
+	  
+	<!-- <div class="card" style="padding-left:1em"> -->
+        <!-- <div class="card-header ch6" style="font-family:arial;font-size:28">  -->
+			<!-- 4Techknowledgist.com -->
+        <!-- </div> -->
+        <!-- <div class="card-body"> -->
+          <!-- <div class="card-title" id="i7ynv">No Copyright -->
+          <!-- </div> -->
+          <!-- <div class="card-sub-title">Free for reference -->
+          <!-- </div> -->
+          <!-- <div class="card-desc">If you like our page, please give a like and hire our developers to own quality team. -->
+          <!-- </div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+		</div>
+		
+		</div>
+		<div class="grid-child green">
+			<div id="panel_div">
+			  NSE Stock Tracker	  
+			  
+				
+			</div>
+		</div>
+		</div>
+	
+	<div class="footer" style="height:200px;top:600px;position:fixed; font-size=8">
+		Technology Lovers, Environment Lovers - Save Air, Water by keeping Safe and Clean Road
+	</div>
+	
+	</div>
+	
+</body>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" /> -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type='text/javascript'>
+
+$(document).ready(function() {
+
+	var today = new Date();
+	today = today.toUTCString().substring(0,30);
+	document.getElementById('time').innerHTML=today;
+	
+//alert('not me');
+ //$("#submit").click(function (e) {
+//alert('calling api');
+
+//Working API - halted till release -- begin
+
+   $.ajax({
+                type: "GET",
+				url: "https://disease.sh/v3/covid-19/states?sort=cases&yesterday=1",
+                <!-- url: "https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search", -->
+				header : {'Access-Control-Allow-Origin': 'https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search','Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS'},
+				dataType: "json",
+				<!-- crossDomain: true, -->
+				<!-- xhrFields: { -->
+					<!-- withCredentials: true -->
+				<!-- } -->
+                success: function (result) {
+				console.log(result);
+				//	var resultHtml='<table><th>Country</th><th>Active Cases</th><th>New cases</th><th>Total Cases</th>';
+					var resultHtml='<table><th>State</th><th>Active Cases</th><th>Today cases</th>';
+					 var jsonParsedNSE = result;
+	   // //console.log(jsonParsedNSE);
+	
+	 for(var attributename in jsonParsedNSE){
+     //console.log(attributename+": "+jsonParsedNSE[attributename]);
+		 for(var subattributename in jsonParsedNSE[attributename]){
+			 resultHtml=resultHtml + '<tr><td>' + 
+			 jsonParsedNSE[attributename].state + ' </td><td> ' + 
+			 jsonParsedNSE[attributename]["cases"] + ' </td><td> ' + 
+		  jsonParsedNSE[attributename]["todayCases"] + ' </td><td> ' + 
+		  jsonParsedNSE[attributename]["todayCases"] + ' </td><td> </tr>';	 
+			 console.log('state ' + jsonParsedNSE[attributename].state +": "+ jsonParsedNSE[attributename]["cases"] + ": "+ jsonParsedNSE[attributename]["todayCases"]);			
+		 }
+	 }
+	 //$("#topbar").html('Ajax result here');
+		$("#topbar").html(resultHtml + ' </table>');			
+					
+                },
+                error: function (xhr, status, error) {
+                    alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+			
+			
+	///===========================================
+
+		
+	//STOCK API
+   $.ajax({
+                type: "GET",
+                url: "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&datatype=json&apikey=VFKY1JW4HICLDRL8" ,
+                dataType: "json",
+                success: function (result) {
+				console.log(result);
+					var resultHtml='<table><th></th><th>open</th><th>high</th><th>low</th><th>volume</th>';
+					
+					 var jsonParsedNSE = result;
+	   // //console.log(jsonParsedNSE);
+	
+	 for(var attributename in jsonParsedNSE){
+     //console.log(attributename+": "+jsonParsedNSE[attributename]);
+		 for(var subattributename in jsonParsedNSE[attributename]){
+			<!-- if ([subattributename].includes('Information') || [subattributename].includes('Symbol')) -->
+			 <!-- { -->
+				<!-- continue; -->
+			 <!-- } -->
+			 resultHtml =resultHtml + '<tr><td>' + 
+			 [subattributename] + ' </td><td> ' +
+		 jsonParsedNSE[attributename][subattributename]["1. open"] + ' </td><td> ' +
+		 jsonParsedNSE[attributename][subattributename]["2. high"] + ' </td><td> ' +
+		 jsonParsedNSE[attributename][subattributename]["3. low"] + ' </td><td> ' +
+		 jsonParsedNSE[attributename][subattributename]["4. close"] + ' </td><td> ' +
+		 jsonParsedNSE[attributename][subattributename]["5. volume"] + ' </td><td> </tr>';	
+			 console.log('open ' + subattributename+": "+ jsonParsedNSE[attributename][subattributename]["1. open"] + 'high ' + subattributename+": "+ jsonParsedNSE[attributename][subattributename]["2. high"]);			
+		 }
+	 }
+	 
+					$("#panel_div").html(resultHtml + ' </table>');
+					$('#panel_div').css("font-size", '8');		
+                },
+                error: function (xhr, status, error) {
+                    alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+	
+			
+			
+        //});
+ 
+
+//Working API - halted till release -- begin
+});
+</script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+</html>
